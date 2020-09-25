@@ -1,13 +1,13 @@
 <config>
 <workspace>/opt/nxreporting/workspace</workspace>
-    <netxmsdConfig>/opt/netxms/etc/netxmsd.conf</netxmsdConfig>
+    <netxmsdConfig>/opt/nxreporting/conf/netxmsd.conf</netxmsdConfig>
     <datasources>
         <datasource>
             <id>secondary</id>
-            <type>postgresql</type>
-            <url>jdbc:postgresql://127.0.0.1/netxms</url>
+            <type>mysql</type>
+            <url>jdbc:mysql://netxms-mysql/netxms_db</url>
             <username>netxms</username>
-            <password>netxms</password>
+            <password>tivitpw123</password>
         </datasource>
     </datasources>
     <smtp>
@@ -15,8 +15,8 @@
         <from>noreply@netxms.org</from>
     </smtp>
     <netxms>
-        <server>127.0.0.1</server>
+        <server>netxms-server</server>
         <login>admin</login>
-        <password>netxms</password>
+        <password>tivit123</password>
     </netxms>
 </config>
