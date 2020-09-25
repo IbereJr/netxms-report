@@ -14,7 +14,7 @@ RUN curl -sL http://packages.netxms.org/netxms.gpg | apt-key add - && \
     curl -O https://www.netxms.org/download/releases/3.5/netxms-reporting-server-3.5.90.zip
 
 RUN apt-get clean && \
-    mkdir -p /opt/nxreporting/workspace /opt/nxreporting/conf
+    mkdir -p /opt/nxreporting/workspace/definitions /opt/nxreporting/conf
 
 WORKDIR /opt/nxreporting
 RUN unzip /netxms-reporting-server-3.5.90.zip
@@ -32,7 +32,7 @@ EXPOSE 4701 4703
 EXPOSE 514/udp
 
 COPY . /
-COPY nxreporting.xml  /opt/nxreporting/conf/
+COPY nxreporting.* logback.xml /opt/nxreporting/conf/
 
 RUN  chmod 755 /docker-entrypoint.sh 
 
