@@ -3,6 +3,7 @@ MAINTAINER Ibere Luiz Di Tizio Junior <ibere.tizio@gmail.com>
 
 ARG VERSION_DIR=3.6
 ARG VERSION_SERVER=3.6.252
+ENV VERSION_SERVER=3.6.252
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && apt-get update && \
     apt-get install -y --no-install-recommends gnupg2 apt-transport-https ca-certificates procps curl vim netcat locales libssl1.1 libzmq5 && \
